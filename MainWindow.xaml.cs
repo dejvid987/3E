@@ -44,19 +44,13 @@ namespace WpfApp4
             {
                 try
                 {
-                    string a = sr.ReadLine();
-                    do
-                    {
-                        text += a;
-                        a = sr.ReadLine();
-                    } while (!sr.EndOfStream);
+                    txt.Text = sr.ReadToEnd();
                 }
                 catch(Exception ex)
                 {
                     MessageBox.Show("Nie może byc puste" + ex.Message);
-                }
+                }t
             }
-            txt.Text = text;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
