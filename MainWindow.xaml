@@ -1,0 +1,16 @@
+<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="txt" HorizontalAlignment="Left" Height="316" Margin="58,27,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="642" TextChanged="TextBox_TextChanged"/>
+        <Button Content="ZAPISZ" HorizontalAlignment="Left" Margin="150,366,0,0" VerticalAlignment="Top" Height="48" Width="134" Click="Save_Click"/>
+        <Button Content="WCZYTAJ" HorizontalAlignment="Left" Margin="428,366,0,0" VerticalAlignment="Top" Height="48" Width="140" Click="Wczytaj_Click"/>
+        <Button Content="Bold" HorizontalAlignment="Left" Margin="333,368,0,0" VerticalAlignment="Top" Height="34" Width="67" Click="Button_Click"/>
+
+    </Grid>
+</Window>
