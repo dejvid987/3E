@@ -1,0 +1,96 @@
+using System;
+abstract class JednostkaWojskowa
+{
+    public abstract void Info();
+}
+class Piechota : JednostkaWojskowa
+{
+    public override void Info()
+    {
+        Console.WriteLine("Jednostka piechoty");
+    }
+}
+class Czolg : JednostkaWojskowa
+{
+    public override void Info()
+    {
+        Console.WriteLine("Jednostka czołgu");
+    }
+}
+class SpecjalneSily : JednostkaWojskowa
+{
+    public override void Info()
+    {
+        Console.WriteLine("Jednostka specjalnych sił");
+    }
+}
+class Artyleria : JednostkaWojskowa
+{
+    public override void Info()
+    {
+        Console.WriteLine("Jednostka artylerii");
+    }
+}
+
+class Lotnictwo : JednostkaWojskowa
+{
+    public override void Info()
+    {
+        Console.WriteLine("Jednostka lotnictwa");
+    }
+}
+abstract class FabrykaWojskowa
+{
+    public abstract JednostkaWojskowa StworzPiechote();
+    public abstract JednostkaWojskowa StworzCzolg();
+    public abstract JednostkaWojskowa StworzSpecjalneSily();
+    public abstract JednostkaWojskowa StworzArtylerie();
+    public abstract JednostkaWojskowa StworzLotnictwo();
+}
+class NowoczesnaFabrykaWojskowa : FabrykaWojskowa
+{
+    public override JednostkaWojskowa StworzPiechote()
+    {
+        return new Piechota();
+    }
+
+    public override JednostkaWojskowa StworzCzolg()
+    {
+        return new Czolg();
+    }
+
+    public override JednostkaWojskowa StworzSpecjalneSily()
+    {
+        return new SpecjalneSily();
+    }
+    public override JednostkaWojskowa StworzArtylerie()
+    {
+        return new Artyleria();
+    }
+
+    public override JednostkaWojskowa StworzLotnictwo()
+    {
+        return new Lotnictwo();
+    }
+}
+class Program
+{
+    static void Main()
+    {
+
+        FabrykaWojskowa nowoczesnaFabryka = new NowoczesnaFabrykaWojskowa();
+
+
+        JednostkaWojskowa jednostkaPiechoty = nowoczesnaFabryka.StworzPiechote();
+        JednostkaWojskowa jednostkaCzolgu = nowoczesnaFabryka.StworzCzolg();
+        JednostkaWojskowa jednostkaSpecjalnychSil = nowoczesnaFabryka.StworzSpecjalneSily();
+        JednostkaWojskowa jednostkaArtylerii = nowoczesnaFabryka.StworzArtylerie();
+        JednostkaWojskowa jednostkaLotnictwa = nowoczesnaFabryka.StworzLotnictwo();
+
+        jednostkaPiechoty.Info();
+        jednostkaCzolgu.Info();
+        jednostkaSpecjalnychSil.Info();
+        jednostkaArtylerii.Info();
+        jednostkaLotnictwa.Info();
+    }
+}
