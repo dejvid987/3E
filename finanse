@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    public class Finanse
+    {
+        Random r = new Random();
+        public double Rabat10(double cena)
+        {
+            return cena * 0.9;
+        }
+        public double RabatLos(double cena)
+        {
+            cena = cena * r.NextDouble();
+            Console.WriteLine("Cena wynosi" + cena);
+            return cena;
+        }
+        public double Marza20(double cena)
+        {
+            cena = cena * 1.2;
+            Console.WriteLine("Marża to"+cena);
+            return cena;
+        }
+        public double MarzaLos(double cena)
+        {
+            double marza = cena *r.NextDouble();
+            cena = cena * marza;
+            Console.WriteLine("Losowa marża wynosi" + cena);
+            return cena;
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Podaj cene");
+            double cena = float.Parse(Console.ReadLine());
+            Finanse f = new Finanse();
+            f.MarzaLos(cena);
+        }
+    }
+}
