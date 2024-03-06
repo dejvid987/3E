@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ConsoleApp2;
+using NUnit.Framework;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        void Rabat10Test()
+        {
+            double kwota = 50.0;
+            Finanse f = new Finanse();
+            double wyn = f.Rabat10(kwota);
+            Assert.That(wyn, Is.EqualTo(kwota * 0.9));
+        }
+        static void Main(string[] args)
+        {
+        }
+    }
+}
